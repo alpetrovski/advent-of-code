@@ -7,3 +7,4 @@
 | 03  | [Part1](src/day03/part01.kt) and [Part2](src/day03/part02.kt) |
 | 04  | [Part1 and Part2](src/day04/part0102.kt)                      |
 | 05  | [Part1 and Part2](src/day05/part0102.kt)                      |
+| 06  | [Part1 and Part2](src/day06/part0102.kt)                      |
