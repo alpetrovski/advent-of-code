@@ -10,3 +10,4 @@
 | 06  | [Part1 and Part2](src/day06/part0102.kt)                      |
 | 07  | [Part1 and Part2](src/day07/part0102.kt)                      |
 | 08  | [Part1 and Part2](src/day08/part0102.kt)                      |
+| 09  | [Part1 and Part2](src/day09/part0102.kt)                      |
