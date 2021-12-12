@@ -13,3 +13,4 @@
 | 09  | [Part1 and Part2](src/day09/part0102.kt)                      |
 | 10  | [Part1 and Part2](src/day10/part0102.kt)                      |
 | 11  | [Part1 and Part2](src/day11/part0102.kt)                      |
+| 12  | [Part1 and Part2](src/day12/part0102.kt)                      |
