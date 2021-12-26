@@ -17,3 +17,4 @@
 | 13  | [Part1 and Part2](src/day13/part0102.kt)                      |
 | 14  | [Part1 and Part2](src/day14/part0102.kt)                      |
 | 15  | [Part1 and Part2](src/day15/part0102.kt)                      |
+| 16  | [Part1 and Part2](src/day16/part0102.kt)                      |
