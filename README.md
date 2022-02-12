@@ -19,3 +19,4 @@
 | 15  | [Part1 and Part2](src/day15/part0102.kt)                      |
 | 16  | [Part1 and Part2](src/day16/part0102.kt)                      |
 | 17  | [Part1 and Part2](src/day17/part0102.kt)                      |
+| 18  | [Part1 and Part2](src/day18/part0102.kt)                      |
