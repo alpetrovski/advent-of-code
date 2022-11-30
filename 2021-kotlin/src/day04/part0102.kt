@@ -3,7 +3,7 @@ package day04
 import java.nio.file.Paths
 
 fun main() {
-    val input = Paths.get("src/day04/input.in").toFile().readLines()
+    val input = Paths.get("2021-kotlin/src/day04/input.in").toFile().readLines()
     val numbers = input[0].split(",").map { it.toInt() }
 
     val sortedWinningCards = (2 until input.size step 6).map { cardStart ->

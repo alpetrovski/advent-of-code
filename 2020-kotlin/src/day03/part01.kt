@@ -3,7 +3,7 @@ package day03
 import java.nio.file.Paths
 
 fun main() {
-    val track = Paths.get("src/day03/input.in").toFile().readLines()
+    val track = Paths.get("2020-kotlin/src/day03/input.in").toFile().readLines()
     val result = countTrees(1, 3, track)
     println(result)
 }

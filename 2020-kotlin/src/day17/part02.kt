@@ -5,7 +5,7 @@ import kotlin.math.max
 import kotlin.math.min
 
 fun main() {
-    val lines = Paths.get("src/day17/input.in").toFile().readLines()
+    val lines = Paths.get("2020-kotlin/src/day17/input.in").toFile().readLines()
     val d1size = lines.size + 12
     val d2size = lines[0].length + 12
     val d3size = 13

@@ -3,7 +3,7 @@ package day03
 import java.nio.file.Paths
 
 fun main() {
-    val input = Paths.get("src/day03/input.in").toFile().readLines()
+    val input = Paths.get("2021-kotlin/src/day03/input.in").toFile().readLines()
     val result = Integer.parseInt(getOxygen(input), 2) * Integer.parseInt(getCO2(input), 2)
 
     println("RESULT: $result")

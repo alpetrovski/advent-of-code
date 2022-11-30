@@ -4,7 +4,7 @@ import java.nio.file.Paths
 import kotlin.math.max
 
 fun main() {
-    val busses = Paths.get("src/day13/input.in").toFile().readLines()[1].split(",").map {
+    val busses = Paths.get("2020-kotlin/src/day13/input.in").toFile().readLines()[1].split(",").map {
         if (it == "x") 1L else it.toLong()
     }.toTypedArray()
 

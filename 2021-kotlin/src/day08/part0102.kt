@@ -3,7 +3,7 @@ package day08
 import java.nio.file.Paths
 
 fun main() {
-    val displays = Paths.get("src/day08/input.in").toFile().readLines().map { line ->
+    val displays = Paths.get("2021-kotlin/src/day08/input.in").toFile().readLines().map { line ->
         val parts = line.split("|")
         Display(parts[0].split(" ").filter { it.isNotBlank() }, parts[1].split(" ").filter { it.isNotBlank() })
     }

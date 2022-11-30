@@ -3,7 +3,7 @@ package day11
 import java.nio.file.Paths
 
 fun main() {
-    val octopusMatrix = Paths.get("src/day11/input.in").toFile().readLines().map { line ->
+    val octopusMatrix = Paths.get("2021-kotlin/src/day11/input.in").toFile().readLines().map { line ->
         line.toCharArray().map { it.toString().toInt() }.toIntArray()
     }.toTypedArray()
 

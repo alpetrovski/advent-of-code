@@ -4,7 +4,7 @@ import java.nio.file.Paths
 import kotlin.math.max
 
 fun main() {
-    val input = Paths.get("src/day17/input.in").toFile().readLines()[0]
+    val input = Paths.get("2021-kotlin/src/day17/input.in").toFile().readLines()[0]
     val match = Regex("x=(-?\\d+)\\.\\.(-?\\d+), y=(-?\\d+)\\.\\.(-?\\d+)").find(input)!!
 
     val (xMin, xMax, yMin, yMax) = match.destructured

@@ -3,7 +3,7 @@ package day02
 import java.nio.file.Paths
 
 fun main() {
-    val correctPasswords = Paths.get("src/day02/input.in").toFile().readLines().map {
+    val correctPasswords = Paths.get("2020-kotlin/src/day02/input.in").toFile().readLines().map {
         val parts = it.split("-"," ", ":")
 
         val position1 = parts[0].toInt() - 1

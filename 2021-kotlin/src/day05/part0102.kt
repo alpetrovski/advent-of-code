@@ -5,7 +5,7 @@ import java.nio.file.Paths
 import kotlin.math.abs
 
 fun main() {
-    val lines = Paths.get("src/day05/input.in").toFile().readLines().map { Line(it) }
+    val lines = Paths.get("2021-kotlin/src/day05/input.in").toFile().readLines().map { Line(it) }
 
     val resultPart1 = lines
         .filter { it.isHorizontal() || it.isVertical() }

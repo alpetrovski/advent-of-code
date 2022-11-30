@@ -10,7 +10,7 @@ fun main() {
     var shipX = 0
     var shipY = 0
 
-    Paths.get("src/day12/input.in").toFile().readLines().forEach { instruction ->
+    Paths.get("2020-kotlin/src/day12/input.in").toFile().readLines().forEach { instruction ->
         val command = instruction[0]
         val value = instruction.substring(1).toInt()
 

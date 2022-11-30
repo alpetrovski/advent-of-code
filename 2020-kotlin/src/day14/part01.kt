@@ -6,7 +6,7 @@ import java.nio.file.Paths
 fun main() {
     val memoryAddressRegex = Regex("\\[(.*)]")
 
-    val inputLines = Paths.get("src/day14/input.in").toFile().readLines()
+    val inputLines = Paths.get("2020-kotlin/src/day14/input.in").toFile().readLines()
 
     val memory = HashMap<Int, Long>()
     var mask = inputLines[0].substring(7)

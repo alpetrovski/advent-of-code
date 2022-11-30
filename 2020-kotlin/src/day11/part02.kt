@@ -3,7 +3,7 @@ package day11
 import java.nio.file.Paths
 
 fun main() {
-    var result = Paths.get("src/day11/input.in").toFile().readLines()
+    var result = Paths.get("2020-kotlin/src/day11/input.in").toFile().readLines()
         .map { it.toCharArray() }.toTypedArray()
     var newResult = transform(result)
     while (!matricesEqual(result, newResult)) {

@@ -9,7 +9,7 @@ data class Command(
 
 fun main() {
 
-    val commands = Paths.get("src/day08/input.in").toFile().readLines().mapIndexed { index, command ->
+    val commands = Paths.get("2020-kotlin/src/day08/input.in").toFile().readLines().mapIndexed { index, command ->
         val commandParts = command.split(" ")
         when (commandParts[0]) {
             "acc" -> Command(nextCommandIndex = index + 1, incrementAccBy = commandParts[1].toInt())

@@ -3,7 +3,7 @@ package day09
 import java.nio.file.Paths
 
 fun main() {
-    val caveMatrix = Paths.get("src/day09/input.in").toFile().readLines().map { line ->
+    val caveMatrix = Paths.get("2021-kotlin/src/day09/input.in").toFile().readLines().map { line ->
         line.toCharArray().map { it.toString().toInt() }.toIntArray()
     }.toTypedArray()
 

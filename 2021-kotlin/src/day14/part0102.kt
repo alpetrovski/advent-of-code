@@ -5,7 +5,7 @@ import java.nio.file.Paths
 val cache = HashMap<String, Map<Char, Long>>()
 
 fun main() {
-    val input = Paths.get("src/day14/input.in").toFile().readLines()
+    val input = Paths.get("2021-kotlin/src/day14/input.in").toFile().readLines()
 
     val rules = input.filter { it.contains("->") }.associate {
         val ruleParts = it.split(" -> ")

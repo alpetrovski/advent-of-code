@@ -3,7 +3,7 @@ package day01
 import java.nio.file.Paths
 
 fun main() {
-    val numbers = Paths.get("src/day01/input.in").toFile().readLines().map { it.toInt() }
+    val numbers = Paths.get("2021-kotlin/src/day01/input.in").toFile().readLines().map { it.toInt() }
 
     val result = (3 until numbers.size).count { rangeEnd ->
         (rangeEnd - 2..rangeEnd).sumOf { numbers[it] } >

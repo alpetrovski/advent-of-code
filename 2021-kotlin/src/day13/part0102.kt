@@ -3,7 +3,7 @@ package day13
 import java.nio.file.Paths
 
 fun main() {
-    val input = Paths.get("src/day13/input.in").toFile().readLines()
+    val input = Paths.get("2021-kotlin/src/day13/input.in").toFile().readLines()
 
     var points = input.filter { it.contains(",") }.map {
         it.split(",").let { split -> Point(split[0].toInt(), split[1].toInt()) }

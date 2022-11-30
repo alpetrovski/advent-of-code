@@ -7,7 +7,7 @@ fun main() {
     var aim = 0L
     var depth = 0L
 
-    Paths.get("src/day02/input.in").toFile().readLines().map {
+    Paths.get("2021-kotlin/src/day02/input.in").toFile().readLines().map {
         val lineComponents = it.split(" ")
         Pair(lineComponents[0], lineComponents[1].toLong())
     }.forEach {

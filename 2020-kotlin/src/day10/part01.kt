@@ -4,7 +4,7 @@ import java.nio.file.Paths
 
 fun main() {
     val orderedJoltages = mutableListOf(0).apply {
-        this.addAll(Paths.get("src/day10/input.in").toFile().readLines().map { it.toInt() }.sorted())
+        this.addAll(Paths.get("2020-kotlin/src/day10/input.in").toFile().readLines().map { it.toInt() }.sorted())
         this.add(this.maxOrNull()!! + 3)
     }
 

@@ -4,7 +4,7 @@ import java.nio.file.Paths
 import java.util.*
 
 fun main() {
-    val numbers = Paths.get("src/day09/input.in").toFile().readLines().map { it.toLong() }
+    val numbers = Paths.get("2020-kotlin/src/day09/input.in").toFile().readLines().map { it.toLong() }
     println(findInvalidNumber(numbers))
 }
 

@@ -4,7 +4,7 @@ import java.lang.Integer.min
 import java.nio.file.Paths
 
 fun main() {
-    val cave = Paths.get("src/day15/input.in").toFile().readLines().map { line ->
+    val cave = Paths.get("2021-kotlin/src/day15/input.in").toFile().readLines().map { line ->
         line.toCharArray().map { it.toString().toInt() }.toIntArray()
     }.toTypedArray()
 

@@ -10,7 +10,7 @@ fun main() {
     val ruleRegex = Regex("[0-9]*:.*")
     val messageRegex = Regex("[ab]+")
 
-    val inputLines = Paths.get("src/day19/input.in").toFile().readLines()
+    val inputLines = Paths.get("2020-kotlin/src/day19/input.in").toFile().readLines()
 
     rules = inputLines.filter { ruleRegex.matches(it) }
             .map {

@@ -10,7 +10,7 @@ fun main() {
     val colorRegex = Regex("(.*) bags contain .*")
     val containingBagsRegex = Regex("[0-9]+ ([a-z]+ [a-z]+) bag[s]*[\\.,]{1}")
 
-    Paths.get("src/day07/input.in").toFile().readLines()
+    Paths.get("2020-kotlin/src/day07/input.in").toFile().readLines()
         .filter { it.contains("no other bags.").not() }
         .forEach { line ->
             val parentColor = colorRegex.find(line)!!.groupValues[1]

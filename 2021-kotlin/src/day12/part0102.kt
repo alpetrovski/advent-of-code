@@ -4,7 +4,7 @@ import java.nio.file.Paths
 
 fun main() {
     val caveConnections = mutableMapOf<String, MutableSet<String>>()
-    Paths.get("src/day12/input.in").toFile().readLines().forEach { line ->
+    Paths.get("2021-kotlin/src/day12/input.in").toFile().readLines().forEach { line ->
         val cave1 = line.split("-")[0]
         val cave2 = line.split("-")[1]
         caveConnections.getOrPut(cave1) { mutableSetOf() }.add(cave2)

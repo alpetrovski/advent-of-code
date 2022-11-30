@@ -4,7 +4,7 @@ import java.nio.file.Paths
 
 fun main() {
     val ruleRegex = Regex("^.*\\: ([0-9]*)\\-([0-9]*) or ([0-9]*)-([0-9]*)")
-    val lines = Paths.get("src/day16/input.in").toFile().readLines()
+    val lines = Paths.get("2020-kotlin/src/day16/input.in").toFile().readLines()
 
     val rules = lines.mapNotNull { ruleRegex.matchEntire(it)?.groupValues }
         .map {

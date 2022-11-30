@@ -9,7 +9,7 @@ fun main() {
     var direction = 'E'
     val sums = mutableMapOf('E' to 0, 'S' to 0, 'W' to 0, 'N' to 0)
 
-    Paths.get("src/day12/input.in").toFile().readLines().forEach { instruction ->
+    Paths.get("2020-kotlin/src/day12/input.in").toFile().readLines().forEach { instruction ->
         val command = instruction[0]
         when {
             directions.contains(command) -> sums[command] = sums[command]!! + instruction.value()

@@ -5,7 +5,7 @@ import java.nio.file.Paths
 import java.util.*
 
 fun main() {
-    val input = Paths.get("src/day16/input.in").toFile().readLines()[0].toCharArray()
+    val input = Paths.get("2021-kotlin/src/day16/input.in").toFile().readLines()[0].toCharArray()
         .map { Integer.parseInt(it.toString(), 16).toString(2).padStart(4, '0').toCharArray() }
         .flatMap { it.asIterable() }
         .let { LinkedList(it) }

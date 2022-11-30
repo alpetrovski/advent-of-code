@@ -4,7 +4,7 @@ import java.nio.file.Paths
 import java.util.*
 
 fun main() {
-    println(findWeakness("src/day09/input.in"))
+    println(findWeakness("2020-kotlin/src/day09/input.in"))
 }
 
 private fun findWeakness(filePath: String): Long? {

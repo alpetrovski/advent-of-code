@@ -20,7 +20,7 @@ fun main() {
 private fun parsePassports(): LinkedList<Map<String, String>> {
     val parsedPassports = LinkedList<Map<String, String>>()
 
-    Paths.get("src/day04/input.in").toFile().readLines().reduce { previousLine, currentLine ->
+    Paths.get("2020-kotlin/src/day04/input.in").toFile().readLines().reduce { previousLine, currentLine ->
         if (currentLine.isBlank()) {
             parsedPassports.add(parsePass(previousLine))
             ""

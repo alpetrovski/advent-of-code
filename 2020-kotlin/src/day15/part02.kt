@@ -3,7 +3,7 @@ package day15
 import java.nio.file.Paths
 
 fun main() {
-    val startNumbers = Paths.get("src/day15/input.in").toFile().readLines()[0].split(",").map { it.toInt() }.toMutableList()
+    val startNumbers = Paths.get("2020-kotlin/src/day15/input.in").toFile().readLines()[0].split(",").map { it.toInt() }.toMutableList()
 
     val lastIndex = mutableMapOf<Int, Int>()
     val secondLastIndex = mutableMapOf<Int, Int>()

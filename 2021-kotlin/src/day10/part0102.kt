@@ -4,7 +4,7 @@ import java.nio.file.Paths
 import java.util.*
 
 fun main() {
-    val analyzedLines = Paths.get("src/day10/input.in").toFile().readLines().map { line ->
+    val analyzedLines = Paths.get("2021-kotlin/src/day10/input.in").toFile().readLines().map { line ->
         val openingCharsStack = Stack<Char>()
 
         val firstCorruptedChar = line.firstOrNull { char ->

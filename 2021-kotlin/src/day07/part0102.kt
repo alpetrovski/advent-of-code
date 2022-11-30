@@ -4,7 +4,7 @@ import java.nio.file.Paths
 import kotlin.math.abs
 
 fun main() {
-    val crabPositions = Paths.get("src/day07/input.in").toFile().readLines()[0].split(",").map { it.toInt() }
+    val crabPositions = Paths.get("2021-kotlin/src/day07/input.in").toFile().readLines()[0].split(",").map { it.toInt() }
     
     val minCrabPosition = crabPositions.minOrNull()!!
     val maxCrabPosition = crabPositions.maxOrNull()!!

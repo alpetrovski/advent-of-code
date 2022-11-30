@@ -16,7 +16,7 @@ private fun findMissingSeat(occupiedSeats: Set<Int>): Int {
 }
 
 private fun occupiedSeats(): Set<Int> {
-    return Paths.get("src/day05/input.in").toFile().readLines().map { boardingPass ->
+    return Paths.get("2020-kotlin/src/day05/input.in").toFile().readLines().map { boardingPass ->
         val row = boardingPass.substring(0, 7)
                 .replace("B", "1")
                 .replace("F", "0")

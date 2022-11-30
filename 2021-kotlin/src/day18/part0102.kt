@@ -10,7 +10,7 @@ val contains = Regex("^.*[\\[\\]\\,]+(\\d+)[\\[\\]\\,]+\$")
 val numberPair = Regex("^.*(\\[\\d+\\,\\d+\\]).*$")
 
 fun main() {
-    val numbers = Paths.get("src/day18/input.in").toFile().readLines()
+    val numbers = Paths.get("2021-kotlin/src/day18/input.in").toFile().readLines()
 
     val resultPart1 = calculateMagnitude(numbers.reduce { number1, number2 -> addNumbers(number1, number2) })
     println("Result Part 1: $resultPart1")

@@ -8,7 +8,7 @@ data class CommandWithParam(
     val index: Int
 )
 fun main() {
-    val commandsWithParams = Paths.get("src/day08/input.in").toFile().readLines().mapIndexed { index, line ->
+    val commandsWithParams = Paths.get("2020-kotlin/src/day08/input.in").toFile().readLines().mapIndexed { index, line ->
         val commandParts = line.split(" ")
         CommandWithParam(index = index, command = commandParts[0], param = commandParts[1].toInt())
     }

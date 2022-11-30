@@ -3,7 +3,7 @@ package day16
 import java.nio.file.Paths
 
 fun main() {
-    val lines = Paths.get("src/day16/input.in").toFile().readLines()
+    val lines = Paths.get("2020-kotlin/src/day16/input.in").toFile().readLines()
 
     // find all the rules
     val ruleRegex = Regex("^(.*)\\: ([0-9]*)\\-([0-9]*) or ([0-9]*)-([0-9]*)")

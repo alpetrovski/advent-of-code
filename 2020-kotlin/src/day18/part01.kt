@@ -4,7 +4,7 @@ import java.nio.file.Paths
 import java.util.*
 
 fun main() {
-    val result = Paths.get("src/day18/input.in").toFile().readLines().map { exp ->
+    val result = Paths.get("2020-kotlin/src/day18/input.in").toFile().readLines().map { exp ->
         evaluateExpression(exp.replace(" ", "").toCharArray().map { it.toString() }.toList())
     }.sum()
     println(result)
