@@ -1,3 +1,10 @@
+# Advent of Code 2022
+
+| Day | Solution                                                                             |
+|-----|--------------------------------------------------------------------------------------|
+| 01  | [Part1 and Part2](2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day01/part0102.kt) |
+| 02  | [Part1 and Part2](2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day02/part0102.kt) |
+
 # Advent of Code 2021
 
 | Day | Solution                                                                              |
