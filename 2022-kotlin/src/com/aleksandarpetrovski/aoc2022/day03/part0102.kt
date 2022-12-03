@@ -5,8 +5,10 @@ import java.nio.file.Paths
 
 private const val INPUT_FILE = "2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day03/input.in"
 
-private fun findFirstCommonItem(inputs: List<String>) =
-    inputs.map { it.toSet() }.reduce { acc, chars -> acc.intersect(chars) }.first()
+private fun findFirstCommonItem(inputStrings: List<String>) = inputStrings
+    .map(String::toSet)
+    .reduce { commonChars, nextInputChars -> commonChars.intersect(nextInputChars) }
+    .first()
 
 private fun itemPriority(input: Char) = when (input) {
     in 'a'..'z' -> input - 'a' + 1
