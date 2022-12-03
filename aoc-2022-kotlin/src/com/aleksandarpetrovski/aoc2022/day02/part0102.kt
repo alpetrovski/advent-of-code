@@ -1,10 +1,9 @@
 package com.aleksandarpetrovski.aoc2022.day02
 
 import com.aleksandarpetrovski.aoc2022.day02.Action.*
+import com.aleksandarpetrovski.aoc2022.readInputLines
 import java.lang.IllegalArgumentException
-import java.nio.file.Paths
 
-private const val INPUT_FILE = "2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day02/input.in"
 private enum class Action(val score: Int, val representations: List<String>) {
     ROCK(1, listOf("A", "X")),
     PAPER(2, listOf("B", "Y")),
@@ -45,7 +44,7 @@ fun part02(inputLines: List<String>): Int {
 }
 
 fun main() {
-    val inputLines = Paths.get(INPUT_FILE).toFile().readLines()
+    val inputLines = readInputLines(2)
 
     println("Result 1: ${part01(inputLines)}")
     println("Result 2: ${part02(inputLines)}")

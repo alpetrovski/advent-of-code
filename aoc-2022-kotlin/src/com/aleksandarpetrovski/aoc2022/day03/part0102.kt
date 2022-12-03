@@ -1,9 +1,7 @@
 package com.aleksandarpetrovski.aoc2022.day03
 
-import java.nio.file.Paths
+import com.aleksandarpetrovski.aoc2022.readInputLines
 import kotlin.IllegalArgumentException
-
-private const val INPUT_FILE = "2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day03/input.in"
 
 private fun findFirstCommonItem(inputStrings: List<String>) = inputStrings
     .map(String::toSet)
@@ -17,7 +15,7 @@ private fun itemPriority(input: Char) = when (input) {
 }
 
 fun main() {
-    val inputLines = Paths.get(INPUT_FILE).toFile().readLines()
+    val inputLines = readInputLines(3)
     val result1 = inputLines
         .map { rucksack -> rucksack.chunked(rucksack.length / 2) }
         .map(::findFirstCommonItem)

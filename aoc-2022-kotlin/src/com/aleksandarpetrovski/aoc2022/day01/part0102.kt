@@ -1,11 +1,9 @@
 package com.aleksandarpetrovski.aoc2022.day01
 
-import java.nio.file.Paths
-
-private const val INPUT_FILE = "2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day01/input.in"
+import com.aleksandarpetrovski.aoc2022.readInputLines
 
 fun main() {
-    val sortedElfCalories = Paths.get(INPUT_FILE).toFile().readLines()
+    val sortedElfCalories = readInputLines(1)
         .joinToString(",").split(",,")
         .map {elfCalories ->
             elfCalories.split(",").sumOf { it.toInt() }
