@@ -24,13 +24,8 @@ fun main() {
         itemPriority(commonItem)
     }
 
-    val result2 = inputLines.withIndex()
-        .groupBy { it.index / 3 }
-        .map { it.value }
-        .sumOf { elfGroup ->
-            val commonItem = findFirstCommonChar(elfGroup.map { it.value })
-            itemPriority(commonItem)
-        }
+    val result2 = inputLines.chunked(3)
+        .sumOf { elfGroup -> itemPriority(findFirstCommonChar(elfGroup)) }
 
     println("Result 1: $result1")
     println("Result 2: $result2")
