@@ -5,7 +5,7 @@ import java.nio.file.Paths
 
 private const val INPUT_FILE = "2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day03/input.in"
 
-private fun findFirstCommonChar(inputs: List<String>) =
+private fun findFirstCommonItem(inputs: List<String>) =
     inputs.map { it.toSet() }.reduce { acc, chars -> acc.intersect(chars) }.first()
 
 private fun itemPriority(input: Char) = when (input) {
@@ -16,16 +16,14 @@ private fun itemPriority(input: Char) = when (input) {
 
 fun main() {
     val inputLines = Paths.get(INPUT_FILE).toFile().readLines()
-    val result1 = inputLines.sumOf { rucksack ->
-        val middleOfItemsStream = rucksack.length / 2
-        val compartmentA = rucksack.substring(0, middleOfItemsStream)
-        val compartmentB = rucksack.substring(middleOfItemsStream)
-        val commonItem = findFirstCommonChar(listOf(compartmentA, compartmentB))
-        itemPriority(commonItem)
-    }
+    val result1 = inputLines
+        .map { rucksack -> rucksack.chunked(rucksack.length / 2) }
+        .map(::findFirstCommonItem)
+        .sumOf(::itemPriority)
 
     val result2 = inputLines.chunked(3)
-        .sumOf { elfGroup -> itemPriority(findFirstCommonChar(elfGroup)) }
+        .map(::findFirstCommonItem)
+        .sumOf(::itemPriority)
 
     println("Result 1: $result1")
     println("Result 2: $result2")
