@@ -1,7 +1,7 @@
 package com.aleksandarpetrovski.aoc2022.day03
 
-import java.lang.IllegalArgumentException
 import java.nio.file.Paths
+import kotlin.IllegalArgumentException
 
 private const val INPUT_FILE = "2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day03/input.in"
 
