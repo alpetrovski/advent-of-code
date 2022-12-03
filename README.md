@@ -4,6 +4,7 @@
 |-----|--------------------------------------------------------------------------------------|
 | 01  | [Part1 and Part2](2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day01/part0102.kt) |
 | 02  | [Part1 and Part2](2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day02/part0102.kt) |
+| 03  | [Part1 and Part2](2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day03/part0102.kt) |
 
 # Advent of Code 2021
 
