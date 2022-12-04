@@ -4,10 +4,8 @@ import com.aleksandarpetrovski.aoc2022.readInputLines
 
 fun main() {
     val elfPairAssignments = readInputLines(4).map { pair ->
-        val assignments = pair.split(",")
-        val elf1Range = IntRange(assignments[0].split("-")[0].toInt(), assignments[0].split("-")[1].toInt())
-        val elf2Range = IntRange(assignments[1].split("-")[0].toInt(), assignments[1].split("-")[1].toInt())
-        Pair(elf1Range, elf2Range)
+        val (elf1Start, elf1Last, elf2Start, elf2Last) = pair.split('-', ',')
+        Pair(IntRange(elf1Start.toInt(), elf1Last.toInt()), IntRange(elf2Start.toInt(), elf2Last.toInt()))
     }
 
     val resultPart1 = elfPairAssignments.count { (elf1Range, elf2Range) ->
