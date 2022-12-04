@@ -10,15 +10,15 @@ fun main() {
         Pair(elf1Range, elf2Range)
     }
 
-    val result1 = elfPairAssignments.count { (elf1Range, elf2Range) ->
+    val resultPart1 = elfPairAssignments.count { (elf1Range, elf2Range) ->
         (elf1Range.first <= elf2Range.first && elf1Range.last >= elf2Range.last)
                 || (elf2Range.first <= elf1Range.first && elf2Range.last >= elf1Range.last)
     }
 
-    val result2 = elfPairAssignments.count { (elf1Range, elf2Range) ->
+    val resultPart2 = elfPairAssignments.count { (elf1Range, elf2Range) ->
         elf1Range.contains(elf2Range.first) || elf2Range.contains(elf1Range.first)
     }
 
-    println("Result 1: $result1")
-    println("Result 2: $result2")
+    println("Result Part 1: $resultPart1")
+    println("Result Part 2: $resultPart2")
 }
