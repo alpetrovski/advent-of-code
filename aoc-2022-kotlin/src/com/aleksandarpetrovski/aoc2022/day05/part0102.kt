@@ -6,8 +6,8 @@ import java.util.Stack
 val movementPattern = Regex("move (\\d+) from (\\d+) to (\\d+)")
 
 fun main() {
-    val input = readInputLines(5)
-    val movements = input.filter { it.startsWith("move ") }
+    val input = readInputLines(day = 5)
+    val movements = input.filter { movementPattern.matches(it) }
 
     val resultPart1 = movePart1(movements, initStacks(input)).getTopElements()
     val resultPart2 = movePart2(movements, initStacks(input)).getTopElements()
