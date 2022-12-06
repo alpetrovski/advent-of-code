@@ -8,6 +8,6 @@ fun main() {
     println("Result Part 2: ${inputStream.firstNDistinctChars(14)}")
 }
 
-fun String.firstNDistinctChars(differentChars: Int) = (differentChars until this.length).first { windowEnd ->
+private fun String.firstNDistinctChars(differentChars: Int) = (differentChars until this.length).first { windowEnd ->
     (windowEnd - differentChars until windowEnd).distinctBy { this[it] }.count() == differentChars
 }
