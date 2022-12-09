@@ -24,10 +24,7 @@ fun main() {
     val requiredAdditionalSpace = FREE_DISK_SPACE_NEEDED - (TOTAL_DISK_SPACE - rootDir.size())
     val resultPart2 = directorySizes.sorted().first { it >= requiredAdditionalSpace }
 
-    println("Expect Part 01: 1543140")
     println("Result Part 01: $resultPart1")
-
-    println("Expect Part 02: 1117448")
     println("Result Part 02: $resultPart2")
 }
 
