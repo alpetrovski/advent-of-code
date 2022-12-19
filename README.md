@@ -12,6 +12,7 @@
 | 08  | [Part1 and Part2](aoc-2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day08/part0102.kt) |
 | 09  | [Part1 and Part2](aoc-2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day09/part0102.kt) |
 | 10  | [Part1 and Part2](aoc-2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day10/part0102.kt) |
+| 11  | [Part1 and Part2](aoc-2022-kotlin/src/com/aleksandarpetrovski/aoc2022/day11/part0102.kt) |
 
 # Advent of Code 2021
 
