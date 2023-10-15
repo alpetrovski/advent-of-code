@@ -2,58 +2,62 @@ package com.aleksandarpetrovski.aoc2022.day12
 
 import com.aleksandarpetrovski.aoc2022.readInputLines
 
+data class Position(val x: Int, val y: Int)
+
 fun main() {
     val matrix = readInputLines(day = 12, isTest = false)
         .map { it.toCharArray() }.toTypedArray()
 
-    val (startX, startY) = matrix.getCoordinatesOf('S').first
-    matrix[startX][startY] = 'a'
+    val startPosition = matrix.getPositionsOf('S').first.also { matrix[it.x][it.y] = 'a' }
+    val endPosition = matrix.getPositionsOf('E').first.also { matrix[it.x][it.y] = 'z' }
 
-    val resultPart1 = findShortest(matrix, matrix.newDistanceMatrix(), startX, startY, 0)
+    val resultPart1 = findShortest(matrix, endPosition, matrix.newDistanceMatrix(), startPosition, 0)
     println("Result Part 1: $resultPart1")
 
-    val resultPart2 = matrix.getCoordinatesOf('a')
-        .minOfOrNull { findShortest(matrix, matrix.newDistanceMatrix(), it.first, it.second, 0) }
+    val resultPart2 = matrix.getPositionsOf('a')
+        .minOfOrNull { findShortest(matrix, endPosition, matrix.newDistanceMatrix(), it, 0) }
     println("Result Part 2: $resultPart2")
 }
 
 private fun findShortest(
     matrix: Array<CharArray>,
+    endPosition: Position,
     distanceTo: List<IntArray>,
-    posX: Int, posY: Int,
+    position: Position,
     stepsTravelled: Int
 ): Int {
-    if (distanceTo[posX][posY] <= stepsTravelled) {
+    if (distanceTo[position.x][position.y] <= stepsTravelled) {
         return Int.MAX_VALUE
     }
-    distanceTo[posX][posY] = stepsTravelled
+    distanceTo[position.x][position.y] = stepsTravelled
 
-    if (matrix[posX][posY] == 'E') {
+    if (position == endPosition) {
         return stepsTravelled
     }
 
     val possibleNextMoves = listOf(
-        Pair(posX - 1, posY),
-        Pair(posX + 1, posY),
-        Pair(posX, posY - 1),
-        Pair(posX, posY + 1)
-    ).filter { isMovePossible(matrix, Pair(posX, posY), it) }
+        Position(position.x - 1, position.y),
+        Position(position.x + 1, position.y),
+        Position(position.x, position.y - 1),
+        Position(position.x, position.y + 1)
+    ).filter { isMovePossible(matrix, Position(position.x, position.y), it) }
 
     return possibleNextMoves
-        .minOfOrNull { findShortest(matrix, distanceTo, it.first, it.second, stepsTravelled + 1) } ?: Int.MAX_VALUE
+        .minOfOrNull { findShortest(matrix, endPosition, distanceTo, it, stepsTravelled + 1) } ?: Int.MAX_VALUE
 }
 
 private fun isMovePossible(
     matrix: Array<CharArray>,
-    old: Pair<Int, Int>,
-    new: Pair<Int, Int>,
+    oldPosition: Position,
+    newPosition: Position,
 ): Boolean {
-    return new.first in matrix.indices && new.second in matrix[new.first].indices
-            && ((matrix[new.first][new.second] == 'E' && matrix[old.first][old.second] in 'y'..'z') || (matrix[new.first][new.second] != 'E' && matrix[new.first][new.second] - matrix[old.first][old.second] <= 1))
+    // first check that the coordinates are in the valid range and that the climb is at most 1
+    return newPosition.x in matrix.indices && newPosition.y in matrix[newPosition.x].indices
+            && matrix[newPosition.x][newPosition.y] - matrix[oldPosition.x][oldPosition.y] <= 1
 }
 
-private fun Array<CharArray>.getCoordinatesOf(input: Char) = this.mapIndexed { indexX, chars ->
-    chars.mapIndexed { indexY, char -> if (char == input) Pair(indexX, indexY) else null }.filterNotNull()
+private fun Array<CharArray>.getPositionsOf(input: Char) = this.mapIndexed { indexX, chars ->
+    chars.mapIndexed { indexY, char -> if (char == input) Position(indexX, indexY) else null }.filterNotNull()
 }.flatten()
 
 private fun Array<CharArray>.newDistanceMatrix(): List<IntArray> = this.map { it.map { Int.MAX_VALUE }.toIntArray() }
