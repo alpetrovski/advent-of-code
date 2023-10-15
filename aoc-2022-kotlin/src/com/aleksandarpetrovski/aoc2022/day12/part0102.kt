@@ -5,49 +5,48 @@ import com.aleksandarpetrovski.aoc2022.readInputLines
 data class Position(val x: Int, val y: Int)
 
 fun main() {
-    val matrix = readInputLines(day = 12, isTest = false)
-        .map { it.toCharArray() }.toTypedArray()
+    val matrix = readInputLines(day = 12, isTest = false).map { it.toCharArray() }
 
-    val startPosition = matrix.getPositionsOf('S').first.also { matrix[it.x][it.y] = 'a' }
-    val endPosition = matrix.getPositionsOf('E').first.also { matrix[it.x][it.y] = 'z' }
+    val start = matrix.getPositionsOf('S').first.also { matrix[it.x][it.y] = 'a' }
+    val finish = matrix.getPositionsOf('E').first.also { matrix[it.x][it.y] = 'z' }
 
-    val resultPart1 = findShortest(matrix, endPosition, matrix.newDistanceMatrix(), startPosition, 0)
+    val resultPart1 = findShortestPath(matrix, matrix.newDistances(), 0, start, finish)
     println("Result Part 1: $resultPart1")
 
     val resultPart2 = matrix.getPositionsOf('a')
-        .minOfOrNull { findShortest(matrix, endPosition, matrix.newDistanceMatrix(), it, 0) }
+        .minOfOrNull { possibleStart -> findShortestPath(matrix, matrix.newDistances(), 0, possibleStart, finish) }
     println("Result Part 2: $resultPart2")
 }
 
-private fun findShortest(
-    matrix: Array<CharArray>,
-    endPosition: Position,
+private fun findShortestPath(
+    matrix: List<CharArray>,
     distanceTo: List<IntArray>,
-    position: Position,
-    stepsTravelled: Int
+    stepsTravelled: Int,
+    current: Position,
+    finish: Position,
 ): Int {
-    if (distanceTo[position.x][position.y] <= stepsTravelled) {
+    if (distanceTo[current.x][current.y] <= stepsTravelled) {
         return Int.MAX_VALUE
     }
-    distanceTo[position.x][position.y] = stepsTravelled
+    distanceTo[current.x][current.y] = stepsTravelled
 
-    if (position == endPosition) {
+    if (current == finish) {
         return stepsTravelled
     }
 
     val possibleNextMoves = listOf(
-        Position(position.x - 1, position.y),
-        Position(position.x + 1, position.y),
-        Position(position.x, position.y - 1),
-        Position(position.x, position.y + 1)
-    ).filter { isMovePossible(matrix, Position(position.x, position.y), it) }
+        Position(current.x - 1, current.y),
+        Position(current.x + 1, current.y),
+        Position(current.x, current.y - 1),
+        Position(current.x, current.y + 1)
+    ).filter { isValidMove(matrix, current, it) }
 
     return possibleNextMoves
-        .minOfOrNull { findShortest(matrix, endPosition, distanceTo, it, stepsTravelled + 1) } ?: Int.MAX_VALUE
+        .minOfOrNull {findShortestPath(matrix, distanceTo, stepsTravelled + 1, it, finish) } ?: Int.MAX_VALUE
 }
 
-private fun isMovePossible(
-    matrix: Array<CharArray>,
+private fun isValidMove(
+    matrix: List<CharArray>,
     oldPosition: Position,
     newPosition: Position,
 ): Boolean {
@@ -56,8 +55,8 @@ private fun isMovePossible(
             && matrix[newPosition.x][newPosition.y] - matrix[oldPosition.x][oldPosition.y] <= 1
 }
 
-private fun Array<CharArray>.getPositionsOf(input: Char) = this.mapIndexed { indexX, chars ->
+private fun List<CharArray>.getPositionsOf(input: Char) = this.mapIndexed { indexX, chars ->
     chars.mapIndexed { indexY, char -> if (char == input) Position(indexX, indexY) else null }.filterNotNull()
 }.flatten()
 
-private fun Array<CharArray>.newDistanceMatrix(): List<IntArray> = this.map { it.map { Int.MAX_VALUE }.toIntArray() }
+private fun List<CharArray>.newDistances(): List<IntArray> = this.map { it.map { Int.MAX_VALUE }.toIntArray() }
