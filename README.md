@@ -1,3 +1,9 @@
+# Advent of Code 2023
+
+| Day | Solution                                                                                 |
+|-----|------------------------------------------------------------------------------------------|
+| 01  | [Part1 and Part2](aoc-2023-kotlin/src/com/aleksandarpetrovski/aoc2023/day01/part0102.kt) |
+
 # Advent of Code 2022
 
 | Day | Solution                                                                                 |
