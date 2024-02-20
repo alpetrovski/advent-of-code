@@ -7,8 +7,8 @@ data class Position(val x: Int, val y: Int)
 fun main() {
     val matrix = readInputLines(day = 12, isTest = false).map { it.toCharArray() }
 
-    val start = matrix.getPositionsOf('S').first.also { matrix[it.x][it.y] = 'a' }
-    val finish = matrix.getPositionsOf('E').first.also { matrix[it.x][it.y] = 'z' }
+    val start = matrix.getPositionsOf('S').first().also { matrix[it.x][it.y] = 'a' }
+    val finish = matrix.getPositionsOf('E').first().also { matrix[it.x][it.y] = 'z' }
 
     val resultPart1 = findShortestPath(matrix, matrix.newDistances(), 0, start, finish)
     println("Result Part 1: $resultPart1")
