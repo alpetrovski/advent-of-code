@@ -3,6 +3,7 @@
 | Day | Solution                                                                                 |
 |-----|------------------------------------------------------------------------------------------|
 | 01  | [Part1 and Part2](aoc-2023-kotlin/src/com/aleksandarpetrovski/aoc2023/day01/part0102.kt) |
+| 02  | [Part1 and Part2](aoc-2023-kotlin/src/com/aleksandarpetrovski/aoc2023/day02/part0102.kt) |
 
 # Advent of Code 2022
 
