@@ -43,6 +43,6 @@ fun main() {
         firstDigit * 10 + lastDigit
     }
 
-    println("Result Part 1: $resultPart1")
-    println("Result Part 2: $resultPart2")
+    println("Result part 1: $resultPart1")
+    println("Result part 2: $resultPart2")
 }
