@@ -13,7 +13,5 @@ fun main() {
     val resultPart2 = sortedListA.sumOf { valueFromA -> sortedListB.count { it == valueFromA } * valueFromA }
 
     println("Result part 1: $resultPart1")
-    println("Expected part 1: 2113135")
     println("Result part 2: $resultPart2")
-    println("Expected part 2: 19097157")
 }
